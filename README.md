@@ -45,7 +45,7 @@ Special thanks to Professor Binil Starly for his guidance and support throughout
 > “Don’t let AI handicap you, use it as a tool” – Prof. Binil
 
 ### 8. Screenshots
-![screenshot](Screenshot 2024-04-27 132808.png)
-![screenshot](Screenshot 2024-04-27 132846.png)
-![screenshot](Screenshot 2024-04-27 132912.png)
+![screenshot](123.png)
+![screenshot](234.png)
+![screenshot](345.png)
 
