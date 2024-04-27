@@ -23,6 +23,8 @@ The workflow of the app involves several stages:
 
 This workflow utilizes the concept of prompt chaining, where the output of one AI-generated task is used as the input for the next, ensuring a coherent and contextually relevant generation process across different media formats (text, image, video).
 
+![screenshot](untitled.png)
+
 ### 4. Technology and AI Agents
 Several AI technologies and agents are utilized in this project:
 - **ChatGPT (OpenAI):** Used for generating fused content ideas and image prompts. This language model acts as a core component, driving the creative content ideation and the generation of descriptive prompts for images.
