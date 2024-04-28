@@ -1,5 +1,5 @@
-
-
+#Pranit Sehgal 
+# Import necessary libraries
 from moviepy.editor import ImageSequenceClip, TextClip, CompositeVideoClip, concatenate_videoclips
 import streamlit as st
 import openai
@@ -9,11 +9,12 @@ from io import BytesIO
 import numpy as np
 import os
 
-
+# Set your OpenAI API key for API access
 OPENAI_API_KEY = "add your key"
 openai.api_key = OPENAI_API_KEY
 
-def generate_content_ideas(idea1, idea2):
+def generate_content_ideas(idea1, idea2):\
+    #Generate image prompts from a selected idea using OpenAI's API.
     prompt = f"Generate 3 innovative content ideas combining: '{idea1}' and '{idea2}.Make sure they have a title and 2-3 sentences'."
     try:
         response = openai.ChatCompletion.create(
@@ -33,7 +34,7 @@ def generate_content_ideas(idea1, idea2):
         return ["Error occurred in generating ideas."]
 
 def generate_image_prompts(idea):
-    
+    #Generate images prompts using OpenAI's gpt-3.5-turbo model.
     prompt = f"Create three short and unique prompts for generating images that visually represent the theme and essence of this idea: '{idea}'."
     try: 
         response = openai.ChatCompletion.create(
@@ -53,6 +54,7 @@ def generate_image_prompts(idea):
         return []
 
 def generate_images(image_prompts):
+    # Generate images from the prompts using OpenAI's DALL-E model.
     images = []
     for prompt in image_prompts:
         try:
@@ -77,12 +79,12 @@ def generate_images(image_prompts):
 
 def generate_slideshow(idea, images):
     video_path = "output_slideshow.mp4"
-    
+    #Create a slideshow video from the generated images with captions.
     
     title_end = idea.find('"', idea.find('"') + 1) + 1
     title = idea[:title_end].strip()
     sentences = idea[title_end:].strip().split('. ')
-    subtitles = sentences[:2]  # Ensure only two subtitles are taken
+    subtitles = sentences[:2]  # Ensuring only two subtitles are taken
     
     
     descriptions = [title] + subtitles + [''] * (3 - len(subtitles) - 1)
@@ -99,7 +101,7 @@ def generate_slideshow(idea, images):
     return video_path
 
 
-
+#Main Function
 def app():
     st.title('Creative Content Idea Generator')
     with st.form("idea_form"):
